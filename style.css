@@ -1,0 +1,102 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    align-content: center;
+    text-align: center;
+    }
+body{
+    background-color: #000000;
+    background-image: none/*url("img/background (4).png")*/,
+    linear-gradient(45deg,
+        #662244 0%, 
+        #664422 25%, 
+        #446622 50%, 
+        #224466 75%, 
+        #442266 100%);
+    
+    background-attachment: fixed;
+    height: 100vh;
+}
+.header{
+    background-color: #00000099;
+    color: #ffffff;
+    height: 90px; /*ВАЖНАЯ ШТУКА*/
+}
+.main{
+    /*background-color: #00000033;*/
+    color: #ffffff;
+    height: calc(100vh - 130px); /*ВАЖНАЯ ШТУКА*/
+    margin: 5px 0% 5px 0%;
+    padding: 5px 0% 5px 0%;
+    overflow: auto;
+}
+::-webkit-scrollbar {
+    width: 0;
+}
+.footer{
+    background-color: #00000099;
+    color: #ffffff;
+    height: 30px; /*ВАЖНАЯ ШТУКА*/
+}
+.card-img{
+    position: relative;
+    overflow: hidden;
+    width: 18rem;
+    height: 18rem;
+}
+.card-img-top{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 18rem;
+    height: 18rem;
+    object-fit: cover;
+}
+.card{
+    background-color: #00000099;
+    color: #ffffff;
+}
+.text{
+    padding: 5px 10% 5px 10%;;
+}
+.row {
+    clear: both;
+}
+.tooltip {
+    display: none;
+    position: absolute;
+    background-color: #FFCC00;
+    color: #000000;
+    padding: 10px;
+    border-radius: 5px;
+    pointer-events: none;
+    width: 150px;
+    z-index: 1;
+} 
+.img-container{
+    position: relative;
+    display: inline-block;
+}
+.img-container:hover::after{
+    content: attr(data-description);
+    position: absolute;
+    transform: translateX(-50%);
+    background-color: #FFCC00;
+    color: #000000;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    top: 100%;
+    left: 50%;
+    white-space: nowrap;
+    z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, visiblity 0.3s;
+}
+.img-container:hover::after{
+    visibility: visible;
+    opacity: 1;
+}
